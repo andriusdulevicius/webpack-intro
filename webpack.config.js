@@ -11,5 +11,9 @@ module.exports = {
         filename: 'main.bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    plugins: [],
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Webpack intro dynamic',
+        }),
+    ],
 };

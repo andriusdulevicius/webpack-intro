@@ -4,12 +4,14 @@
     "description": "we learn webpack",
     "main": "index.js",
     "scripts": {
+        "start": "npm install",
         "dev": "webpack --mode development",
         "build": "webpack --mode production"
     },
     "author": "AD",
     "license": "MIT",
     "devDependencies": {
+        "html-webpack-plugin": "^5.3.1",
         "webpack": "^5.37.1",
         "webpack-cli": "^4.7.0"
     }

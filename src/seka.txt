@@ -7,3 +7,12 @@ npx webpack --mode production
 
 sukompiliavimas kurimui - (development mode)
 npx webpack --mode development
+juos galime susikelti i package.json failo scriptus 
+
+pasidarom scriptus dev build ir start
+
+norim idiegti html plugin
+npm install --save-dev html-webpack-plugin
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');   --sitas eilutes nusikopijuojam is dokumentacijos webpack ir idedam i sukurta faila webpack.config.js

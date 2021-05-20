@@ -1,2 +1,9 @@
 Instaliuojam webpack : 
 npm install --save-dev webpack webpack-cli (command line interface)
+
+paruosimas produkcijai(sugeneruojam optimalius failus, sujungiam i viena ir pap.)
+paleidziam webpack:
+npx webpack --mode production
+
+sukompiliavimas kurimui - (development mode)
+npx webpack --mode development

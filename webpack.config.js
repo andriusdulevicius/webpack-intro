@@ -14,6 +14,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Webpack intro dynamic',
+            template: 'src/index.html',
         }),
     ],
 };

@@ -1,6 +1,8 @@
 import add from './js/add';
 import say from './js/say';
-import banner from './banner/ban';
+import banner from './components/banner/ban';
+import aside from './components/aside/aside';
+import printResults from './components/modal/modal';
 
 import './css/style.css'; //itraukiam css faila
 // const path = require('path');
@@ -19,7 +21,17 @@ const obj = {
 const copy = { ...obj, gender: 'male' };
 
 console.log('copy : ', copy);
+const bannerTitle = 'Best banner';
+const bestBanner = banner(bannerTitle, 'Learn more about banners');
 
-const bestBanner = banner('Best banner', 'Learn more about banners');
-
+const guestsArr = ['Jonas Jonaitis', 'Michaelis Dzeksonas', 'Selas Selauskas', 'Rihana', 'Ariana Grande'];
+const title = 'Sveciu sarasas:';
+const mainAside = aside(title, guestsArr);
 document.body.append(bestBanner);
+document.body.append(mainAside);
+const btn = mainAside.querySelector('button');
+btn.addEventListener('click', () => {
+    console.log(bannerTitle);
+});
+
+printResults();

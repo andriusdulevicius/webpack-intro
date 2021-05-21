@@ -1,0 +1,26 @@
+.modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 1;
+    color: black;
+    text-align: center;
+}
+
+.back-drop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+.remove {
+    display: none;
+}

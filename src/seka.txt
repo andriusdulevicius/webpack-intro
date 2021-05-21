@@ -49,3 +49,17 @@ pridedam naujas rules i webpack config faila:
             }
 
 is naujo paleidziam npm run dev/build
+
+
+susiinstaliuojam webpack-dev-server:
+
+npm install --save-dev webpack-dev-server
+
+prie module.exports prirasom
+
+  devServer: {
+    contentBase: './dist',
+  },
+
+package.json faile , sukuriam scripta:
+"serve": "webpack serve --open"

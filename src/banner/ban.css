@@ -1,0 +1,9 @@
+.banner {
+    border: 1px solid #000;
+    border-radius: 1em;
+    padding: 1em;
+    background-color: snow;
+    color: coral;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}

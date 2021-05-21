@@ -1,5 +1,7 @@
-import add from './js/add.js';
-import say from './js/say.js';
+import add from './js/add';
+import say from './js/say';
+import banner from './banner/ban';
+
 import './css/style.css'; //itraukiam css faila
 // const path = require('path');
 // console.log('path', path.resolve(__dirname));
@@ -17,3 +19,7 @@ const obj = {
 const copy = { ...obj, gender: 'male' };
 
 console.log('copy : ', copy);
+
+const bestBanner = banner('Best banner', 'Learn more about banners');
+
+document.body.append(bestBanner);

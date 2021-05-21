@@ -67,3 +67,10 @@ npm run serve - neatkuria failu , viska laiko atmintyje ( jei pvz istrinsim dist
 
 su npm run dev paleidus, atkuria ir istrintus failus
 
+instaliuojam minimize css packa: 
+npm install --save-dev mini-css-extract-plugin
+
+tada webpacke production failo virsuje ikeliam: const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+poto:
+prie plugins ikelti new MiniCssExtractPlugin();
+prie rules vietoj 'style-loader' ikeliame MiniCssExtractPlugin.loader

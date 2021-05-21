@@ -62,4 +62,8 @@ prie module.exports prirasom
   },
 
 package.json faile , sukuriam scripta:
-"serve": "webpack serve --open"
+"serve": "webpack serve --open"  (tarsi liveserver)
+npm run serve - neatkuria failu , viska laiko atmintyje ( jei pvz istrinsim dist faile, paleidus serve , ta dir neatsiras)
+
+su npm run dev paleidus, atkuria ir istrintus failus
+

@@ -3,6 +3,7 @@ import say from './js/say';
 import banner from './components/banner/ban';
 import aside from './components/aside/aside';
 import printResults from './components/modal/modal';
+import createAndPrintElement from './js/helperFns';
 
 import './css/style.css'; //itraukiam css faila
 // const path = require('path');
@@ -35,3 +36,12 @@ btn.addEventListener('click', () => {
 });
 
 printResults();
+
+const headingOne = createAndPrintElement('h3', 'Sveiki cia antraste 1', 'first-h3');
+const paraOne = createAndPrintElement('p', 'Hello this is paragraph 1 with no class.');
+
+document.body.append(headingOne, paraOne);
+document.body.append(
+    createAndPrintElement('h3', 'Sveiki cia antraste 2', 'second-h3'),
+    createAndPrintElement('p', 'Hello this is paragraph 2 with a class.', 'second-para')
+);

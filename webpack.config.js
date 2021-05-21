@@ -20,6 +20,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
                 test: /\.css$/i, //pritiakome taisykles esancias use skiltyje visiems *.css failams su tokia pabaiga(css.loader pagamina faila, o style-loader ideda i dist folderi)
                 //TODO: production environmente minicssExtractPlugin irasyti
                 use: ['style-loader', 'css-loader'],

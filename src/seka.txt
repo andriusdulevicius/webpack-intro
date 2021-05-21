@@ -74,3 +74,13 @@ tada webpacke production failo virsuje ikeliam: const MiniCssExtractPlugin = req
 poto:
 prie plugins ikelti new MiniCssExtractPlugin();
 prie rules vietoj 'style-loader' ikeliame MiniCssExtractPlugin.loader
+
+norint minimizuoti paveikslelius, reikia : 
+
+sita ikeliam i rules webpack.config faile:
+{
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+
+tada pasiimti paveikslelius galesim su importu 

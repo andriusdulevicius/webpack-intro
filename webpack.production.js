@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -17,6 +18,10 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
             {
                 test: /\.css$/i, //pritiakome taisykles esancias use skiltyje visiems *.css failams su tokia pabaiga(css.loader pagamina faila, o style-loader ideda i dist folderi)
                 //TODO: production environmente minicssExtractPlugin irasyti
@@ -35,6 +40,19 @@ module.exports = {
         ],
     },
     plugins: [
+        new ImageMinimizerPlugin({
+            filename: 'images/[name].webp',
+            deleteOriginalAssets: true,
+            minimizerOptions: {
+                plugins: [
+                    ['imagemin-webp'],
+                    ['mozjpeg', { quality: 50 }],
+                    ['gifsicle'],
+                    ['pngquant'],
+                    ['imagemin-svgo'],
+                ],
+            },
+        }),
         new MiniCssExtractPlugin({
             filename: 'style.css',
         }),

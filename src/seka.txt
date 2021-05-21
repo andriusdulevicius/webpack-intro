@@ -75,8 +75,8 @@ poto:
 prie plugins ikelti new MiniCssExtractPlugin();
 prie rules vietoj 'style-loader' ikeliame MiniCssExtractPlugin.loader
 
-norint minimizuoti paveikslelius, reikia : 
 
+Del img: 
 sita ikeliam i rules webpack.config faile:
 {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -84,3 +84,38 @@ sita ikeliam i rules webpack.config faile:
       },
 
 tada pasiimti paveikslelius galesim su importu 
+
+norint minimizuoti paveikslelius, reikia instaliuoti tuos du: 
+
+npm install image-minimizer-webpack-plugin --save-dev
+
+npm install imagemin-gifsicle imagemin-mozjpeg imagemin-pngquant imagemin-svgo --save-dev
+
+npm install imagemin-webp --save-dev
+
+i webpack production failo virsu isitraukiam plugina: 
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+
+ir to pacio failo apacioj prie pluginu irasom : 
+
+
+new ImageMinimizerPlugin({
+            filename: 'images/[name].webp',
+            deleteOriginalAssets: true,
+            minimizerOptions: {
+                plugins: [
+                    ['imagemin-webp'],
+                    ['mozjpeg', { quality: 50 }],
+                    ['gifsicle'],
+                    ['pngquant'],
+                    ['imagemin-svgo'],
+                ],
+            },
+        }),
+
+o prie rules :
+
+{
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },

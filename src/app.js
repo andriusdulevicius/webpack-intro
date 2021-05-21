@@ -1,6 +1,6 @@
 import add from './js/add.js';
 import say from './js/say.js';
-import './css/style.css'; //itraukiam css faila
+// import './css/style.css'; //itraukiam css faila
 // const path = require('path');
 // console.log('path', path.resolve(__dirname));
 

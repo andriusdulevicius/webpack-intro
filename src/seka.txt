@@ -15,4 +15,19 @@ norim idiegti html plugin
 npm install --save-dev html-webpack-plugin
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');   --sitas eilutes nusikopijuojam is dokumentacijos webpack ir idedam i sukurta faila webpack.config.js
+const path = require('path');   --sitas eilutes nusikopijuojam is dokumentacijos webpack internetiniame puslapyje ir idedam i sukurta faila webpack.config.js
+
+suinstaliuojam stiliaus packus:
+npm install --save-dev css-loader style-loader
+isirasius pluginus , webpack config faile ties moduleexports irasome papildoma info:
+module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            }
+        ],
+    },
+
+kad viska kas baigiasi su .css visiem failam pritaikome tuos du parsiustus loaderius.
+

@@ -14,7 +14,8 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.css$/i, //pritiakome taisykles esancias use skiltyje visiems *.css failams su tokia pabaiga(css.loader pagamina faila, o style-loader ideda i dist folderi)
+                //TODO: production environmente minicssExtractPlugin irasyti
                 use: ['style-loader', 'css-loader'],
             },
         ],
@@ -22,7 +23,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Webpack intro dynamic',
-            template: 'src/index.html',
+            template: 'src/template.html',
         }),
     ],
 };

@@ -131,3 +131,24 @@ o prie plugins imgminimize skiltyje , nutriname:
 filename: 'images/[name].webp',  
             deleteOriginalAssets: true,
 (nes nurodeme output dalyje pavadinima bendra visiems)
+
+prisideti post css plugin - kad pridetu reikalingus webkit pagal narsykle ir versija
+npm install --save-dev postcss postcss-loader postcss-preset-env
+
+webpack production faile, prie rules >> use  darasome 'postcss-loader'
+
+sukuriam faila postcss.config.js root direktorijoje, ir joje irasome:
+
+module.exports = {
+    plugins: ['postcss-preset-env'],
+};
+
+
+sukuriam faila : .browserslistrc  ,
+jo viduje rasome: 
+
+last 2 versions
+> 0.5%
+IE 9
+
+(cia info del webkitu, kad butu palaikomas senose narsyklese , irasius si faila , dist folderio css faile kur reikia daraso webkit prie savybiu ir perraso tam tikras savybes, kad veiktu senose narsyklese)

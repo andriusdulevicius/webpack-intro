@@ -6,3 +6,10 @@ body {
 img {
     max-width: 100%;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}

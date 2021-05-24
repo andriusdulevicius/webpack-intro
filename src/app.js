@@ -6,6 +6,7 @@ import printResults from './components/modal/modal';
 import createAndPrintElement from './js/helperFns';
 
 import picture from './img/img1.jpg';
+import pngPic from './img/bart.png';
 
 import './css/style.css'; //itraukiam css faila
 // const path = require('path');
@@ -14,6 +15,12 @@ import './css/style.css'; //itraukiam css faila
 const pic = document.createElement('img');
 pic.src = picture;
 document.body.prepend(pic);
+
+const png = document.createElement('img');
+png.src = pngPic;
+document.body.append(png);
+//galima kurti img tiesiai templage.html dalyje. Tuomet dist prie images nerodys to img kol nesutvarkysime.  Reikia naudoti spec sintakse  -->
+// <img src = <%= require('./img/bart.png') %> alt="">
 
 const bannerTitle = 'Best banner';
 const bestBanner = banner(bannerTitle, 'Learn more about banners');

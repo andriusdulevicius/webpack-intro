@@ -119,3 +119,15 @@ o prie rules :
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
+
+webpack.production ir config failuose output dalyje irasome: 
+
+assetModuleFilename: 'images/[name / arba hash][ext]', 
+
+kad visi paveiksleliai butu issaugoti images faile
+
+o prie plugins imgminimize skiltyje , nutriname: 
+
+filename: 'images/[name].webp',  
+            deleteOriginalAssets: true,
+(nes nurodeme output dalyje pavadinima bendra visiems)

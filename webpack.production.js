@@ -15,6 +15,7 @@ module.exports = {
         filename: 'final.bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
+        assetModuleFilename: 'images/[name][ext]', //nurodome kur bus padeti paveiksleliai
     },
     module: {
         rules: [
@@ -41,14 +42,12 @@ module.exports = {
     },
     plugins: [
         new ImageMinimizerPlugin({
-            filename: 'images/[name].webp',
-            deleteOriginalAssets: true,
             minimizerOptions: {
                 plugins: [
-                    ['imagemin-webp'],
+                    // ['imagemin-webp'], - nebereikia
                     ['mozjpeg', { quality: 50 }],
                     ['gifsicle'],
-                    ['pngquant'],
+                    ['pngquant', { quality: [0.3, 0.6] }], //sitas savybes galima paziureti google npm ivedus pngquant ar kita
                     ['imagemin-svgo'],
                 ],
             },
